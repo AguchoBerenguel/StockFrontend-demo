@@ -5,7 +5,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
   const contraseña = document.getElementById("contraseña").value;
 
   try {
-    const response = await fetch("/api/login", {
+    const response = await fetch("stockapi-demo-production.up.railway.app/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ NombreUsuario : nombreUsuario, Contraseña : contraseña }),

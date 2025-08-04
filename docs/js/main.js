@@ -1,4 +1,4 @@
-const apiUrl = "/api/producto";
+const apiUrl = "stockapi-demo-production.up.railway.app/producto";
 
 // Cargar productos al iniciar
 window.onload = cargarProductos;

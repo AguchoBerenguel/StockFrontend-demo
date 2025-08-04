@@ -1,5 +1,5 @@
-const productosUrl = "/api/producto";
-const movimientosUrl = "/api/movimientos";
+const productosUrl = "stockapi-demo-production.up.railway.app/producto";
+const movimientosUrl = "stockapi-demo-production.up.railway.app/movimientos";
 
 // Al cargar la página
 window.onload = function () {

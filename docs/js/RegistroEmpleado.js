@@ -1,4 +1,4 @@
-const apiUrl = "/api/usuarios";
+const apiUrl = "stockapi-demo-production.up.railway.app/usuarios";
 
 document
   .getElementById("usuario-form")
