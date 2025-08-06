@@ -1,4 +1,4 @@
-const empleadosUrl = "stockapi-demo-production.up.railway.app/empleado";
+const empleadosUrl = "stockapi-demo-production.up.railway.app/api/empleado";
 
 window.onload = function () {
   cargarEmpleados();

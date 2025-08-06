@@ -5,18 +5,46 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
   const contraseña = document.getElementById("contraseña").value;
 
   try {
-    const response = await fetch("stockapi-demo-production.up.railway.app/login", {
+    const response = await fetch("https://stockapi-demo-production.up.railway.app/api/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ NombreUsuario : nombreUsuario, Contraseña : contraseña }),
+      body: JSON.stringify({ NombreUsuario: nombreUsuario, Contraseña: contraseña }),
     });
 
     if (response.ok) {
       const data = await response.json();
       if (data.rol === "admin") {
-        window.location.href = "./pages/Empleados.html"; // ✅ Corregido
+        window.location.href = "./pages/Empleados.html";
       } else {
-        window.location.href = "./pages/GestionProductos.html"; // ✅ Corregido
+        window.location.href = "./pages/GestionProductos.html";
+      }
+    } else {
+      document.getElementById("mensaje").textContent = "Usuario o contraseña incorrectos.";
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    document.getElementById("mensaje").textContent = "No se pudo conectar con el servidor.";
+  }
+});
+document.getElementById("login-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const nombreUsuario = document.getElementById("usuario").value;
+  const contraseña = document.getElementById("contraseña").value;
+
+  try {
+    const response = await fetch("https://stockapi-demo-production.up.railway.app/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ NombreUsuario: nombreUsuario, Contraseña: contraseña }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      if (data.rol === "admin") {
+        window.location.href = "./pages/Empleados.html";
+      } else {
+        window.location.href = "./pages/GestionProductos.html";
       }
     } else {
       document.getElementById("mensaje").textContent = "Usuario o contraseña incorrectos.";
