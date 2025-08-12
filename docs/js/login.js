@@ -2,7 +2,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const nombreUsuario = document.getElementById("usuario").value;
-  const contraseña = document.getElementById("Contraseña").value;
+  const contraseña = document.getElementById("contraseña").value;
 
   try {
     const response = await fetch("https://stockapi-demo-production.up.railway.app/api/login", {
