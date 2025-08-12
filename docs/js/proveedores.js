@@ -1,4 +1,4 @@
-const apiUrl = "stockapi-demo-production.up.railway.app/api/proveedores"; 
+const apiUrl = "https://stockapi-demo-production.up.railway.app/api/proveedores"; 
 
 window.onload = cargarProveedores;
 
